@@ -23,3 +23,14 @@ Route::post('/clients','App\Http\Controllers\ClientController@store');
 Route::get('/clients/{client}','App\Http\Controllers\ClientController@show');
 Route::put('/clients/{client}','App\Http\Controllers\ClientController@update');
 Route::delete('/clients/{client}','App\Http\Controllers\ClientController@destroy');
+
+Route::get('/service','App\Http\Controllers\ServiceController@index');
+Route::post('/service','App\Http\Controllers\ServiceController@store');
+Route::get('/service/{service}','App\Http\Controllers\ServiceController@show');
+Route::put('/service/{service}','App\Http\Controllers\ServiceController@update');
+Route::delete('/service/{service}','App\Http\Controllers\ServiceController@destroy');
+
+Route::post('/clients/service','App\Http\Controllers\ClientController@attach');
+Route::post('/clients/service/detach','App\Http\Controllers\ClientController@detach');
+
+Route::post('/service/clients','App\Http\Controllers\ServiceController@clients');
